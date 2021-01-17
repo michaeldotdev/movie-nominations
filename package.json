@@ -4,10 +4,18 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "dev": "webpack --mode development",
+    "test": "jest --verbose",
+    "dev": "webpack -w --mode development",
     "start": "webpack serve",
     "build": "webpack --mode production"
+  },
+  "jest": {
+    "setupFilesAfterEnv": [
+      "<rootDir>/src/setupTests.js"
+    ],
+    "testPathIgnorePatterns": [
+      "<rootDir>/node_modules/"
+    ]
   },
   "repository": {
     "type": "git",
@@ -24,9 +32,15 @@
     "@babel/core": "^7.12.10",
     "@babel/preset-env": "^7.12.11",
     "@babel/preset-react": "^7.12.10",
+    "@types/jest": "^26.0.20",
+    "babel-jest": "^26.6.3",
     "babel-loader": "^8.2.2",
     "css-loader": "^5.0.1",
+    "enzyme": "^3.11.0",
+    "enzyme-adapter-react-16": "^1.15.5",
     "html-webpack-plugin": "^4.5.1",
+    "jest": "^26.6.3",
+    "react-test-renderer": "^17.0.1",
     "style-loader": "^2.0.0",
     "webpack": "^5.15.0",
     "webpack-cli": "^4.3.1",
